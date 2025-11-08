@@ -45,5 +45,7 @@ class ConfirmarActivity : AppCompatActivity() {
         intent.setData(Uri.parse("sms:+5541998037232"))
         intent.putExtra("sms_body", sms)
 
+        startActivity(intent)
+
     }
 }
