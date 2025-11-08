@@ -1,5 +1,7 @@
 package br.edu.mk.trocatela
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -34,5 +36,14 @@ class ConfirmarActivity : AppCompatActivity() {
 
     }
 
-    fun btConfirmarComSMSOnClick(view: View) {}
+    fun btConfirmarComSMSOnClick(view: View) {
+
+        val sms = "Cod: ${tvCod.text}, Qtd: ${tvQtd.text}, Valor: ${tvValor.text} "
+
+        val intent = Intent(Intent.ACTION_VIEW)
+
+        intent.setData(Uri.parse("sms:+5541998037232"))
+        intent.putExtra("sms_body", sms)
+
+    }
 }
